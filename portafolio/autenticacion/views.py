@@ -1,11 +1,11 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from .forms import NewUserForm
-from django.views.generic import View,CreateView
+from django.views.generic import TemplateView,CreateView
+from django.contrib.auth.mixins import LoginRequiredMixin
 
-class AutenticacionView(View):
-  def get(self,request):
-    return HttpResponse(" Hola soy una clase de la aplicacion autenticacion")
+class AutenticacionView(LoginRequiredMixin,TemplateView):
+  template_name = "prueba.html"
   
 class RegisterView(CreateView):
   template_name = "registration/register.html"
