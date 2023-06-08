@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'autenticacion.apps.AutenticacionConfig',
     'cliente.apps.ClienteConfig',
+    'formulario.apps.FormularioConfig',
 ]
 
 MIDDLEWARE = [
