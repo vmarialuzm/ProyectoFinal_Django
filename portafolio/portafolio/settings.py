@@ -133,4 +133,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #Podemos modeficar a donde ira el login y tambien vamos a definir quien es login
 LOGIN_URL = 'login'
-LOGIN_REDIRECT_URL = "index"
+LOGIN_REDIRECT_URL = "crear"
