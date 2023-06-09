@@ -8,6 +8,7 @@
 </head>
 <body>
     <h1>Aqui ira el formulario</h1>
+    <a href="{% url 'crear' %}">Crear Proyecto</a>
     <ul>
         {% for proyecto in proyectos %}
         <li>{{ proyecto.titulo_proyecto }}</li>
