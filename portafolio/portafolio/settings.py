@@ -134,3 +134,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #Podemos modeficar a donde ira el login y tambien vamos a definir quien es login
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = "crear"
+
+#Para poder ver el template portfolio-details.html
+X_FRAME_OPTIONS = "SAMEORIGIN"
