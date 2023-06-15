@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -137,3 +140,10 @@ LOGIN_REDIRECT_URL = "crear"
 
 #Para poder ver el template portfolio-details.html
 X_FRAME_OPTIONS = "SAMEORIGIN"
+
+#Variables de configuración utilizando las credenciales obtenidas de Cloudinary
+cloudinary.config( 
+  cloud_name = "dbe88hckk", 
+  api_key = "513929725166659", 
+  api_secret = "0YUMB08X4zORp86rKt8xXnXo54s" 
+)
