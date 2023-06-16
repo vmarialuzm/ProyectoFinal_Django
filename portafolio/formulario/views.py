@@ -14,11 +14,13 @@ class CreateProyecto(LoginRequiredMixin,FormView):
 
     #Para guardar la informacion existe esta función 
     def form_valid(self, form):
+        foto = form.cleaned_data['foto']
         foto_proyecto_details1 = form.cleaned_data['foto_proyecto_details1']
         foto_proyecto_details2 = form.cleaned_data['foto_proyecto_details2']
         foto_proyecto_details3 = form.cleaned_data['foto_proyecto_details3']
 
         # Subir la imagen a Cloudinary y obtener la URL
+        foto_url = cloudinary.uploader.upload(foto)['secure_url']
         foto_proyecto_details1_url = cloudinary.uploader.upload(foto_proyecto_details1)['secure_url']
         foto_proyecto_details2_url = cloudinary.uploader.upload(foto_proyecto_details2)['secure_url']
         foto_proyecto_details3_url = cloudinary.uploader.upload(foto_proyecto_details3)['secure_url']
@@ -26,7 +28,7 @@ class CreateProyecto(LoginRequiredMixin,FormView):
         # Crear el objeto Proyecto con la URL de la imagen en Cloudinary
         # cleaned_data es el objeto que tiene toda la info que hemos llenado en el formulario
         proyecto = Proyecto(
-            foto = form.cleaned_data['foto'],
+            foto = foto_url,
             foto_proyecto_details1 = foto_proyecto_details1_url,
             foto_proyecto_details2 = foto_proyecto_details2_url,
             foto_proyecto_details3 = foto_proyecto_details3_url,

@@ -1,7 +1,7 @@
 from django import forms
 
 class ProyectoForm(forms.Form):
-    foto = forms.URLField(widget=forms.TextInput(attrs={
+    foto = forms.ImageField(widget=forms.ClearableFileInput(attrs={
         "class": "form-control mb-3"
     }))
     foto_proyecto_details1 = forms.ImageField(widget=forms.ClearableFileInput(attrs={

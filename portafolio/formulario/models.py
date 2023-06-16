@@ -2,7 +2,7 @@ from django.db import models
 from cloudinary.models import CloudinaryField
 
 class Proyecto(models.Model):
-    foto = models.URLField()
+    foto = CloudinaryField('foto')
     foto_proyecto_details1 = CloudinaryField('foto_proyecto_details1')
     foto_proyecto_details2 = CloudinaryField('foto_proyecto_details2')
     foto_proyecto_details3 = CloudinaryField('foto_proyecto_details3')
