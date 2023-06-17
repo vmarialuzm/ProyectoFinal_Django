@@ -45,9 +45,5 @@ class CreateProyecto(LoginRequiredMixin,FormView):
         return super().form_invalid(form)
         
 
-""" class Formulario(View):
-    def get(self,request):
-        proyectos = Proyecto.objects.all()
-        context = {"proyectos": proyectos}
-        return render(request, "formulario.html", context) """
+
 
