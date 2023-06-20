@@ -1,9 +1,8 @@
 from django.shortcuts import render
 from formulario.models import Proyecto
 from django.views.generic import View
-from django.contrib.auth.mixins import LoginRequiredMixin
 
-class Index(LoginRequiredMixin, View):
+class Index(View):
   def get(self,request):
     proyectos = Proyecto.objects.all()
     context = {"proyectos": proyectos}
